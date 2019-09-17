@@ -754,6 +754,7 @@ class XBMCNFO(PlexAgent):
                                             addpath = ''
                                             log.debug ('Found no additional path parts.')
                                         aimagepath = athumbpath + addpath + '/' + os.path.basename(folder_path) + '/.actors/' + aimagefilename
+                                        aimagepath = aimagepath.replace('#', '%23')
                                         if not os.path.isfile(localpath):
                                             log.debug ('failed setting ' + athumbloc + ' actor photo: ' + aimagepath)
                                             aimagepath = None
@@ -769,7 +770,6 @@ class XBMCNFO(PlexAgent):
                                             log.debug ('failed setting ' + athumbloc + ' actor photo: ' + aimagepath)
                                             aimagepath = None
                                     if aimagepath:
-                                        aimagepath = aimagepath.replace('#', '%23')
                                         newrole.photo = aimagepath
                                         log.debug ('success setting ' + athumbloc + ' actor photo: ' + aimagepath)
                         except:
