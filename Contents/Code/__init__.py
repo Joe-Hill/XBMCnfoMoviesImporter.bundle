@@ -769,6 +769,7 @@ class XBMCNFO(PlexAgent):
                                             log.debug ('failed setting ' + athumbloc + ' actor photo: ' + aimagepath)
                                             aimagepath = None
                                     if aimagepath:
+                                        aimagepath = aimagepath.replace('#', '%23')
                                         newrole.photo = aimagepath
                                         log.debug ('success setting ' + athumbloc + ' actor photo: ' + aimagepath)
                         except:
